@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@app/styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from 'next/font/google';
+import styles from '@app/styles/Home.module.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
-            Hello I'm Angie&nbsp;
+            Hello Im Angie&nbsp;
             <code className={styles.code}>pages/index.js</code>
           </p>
           <div>
@@ -119,5 +119,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
