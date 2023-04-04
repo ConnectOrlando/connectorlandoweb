@@ -31,8 +31,12 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Using Mantine Library
+Added [Mantine](https://mantine.dev) to the project for styling and as a component library. This requires using [emotion](https://emotion.sh/docs/introduction) as a `css-in-js` library.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Benefits
+How about [**134 _responsive_ components**](https://ui.mantine.dev/#main)?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Free for everyone (including commercial)
+- Light and dark theme
+- Completely customizable
