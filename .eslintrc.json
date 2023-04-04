@@ -24,6 +24,7 @@
         }
       }
     ],
+    "import/no-anonymous-default-export": "off",
     "prefer-destructuring": ["error", { "object": true, "array": false }],
     "prefer-template": "error",
     "prefer-const": "error",
