@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "format": "prettier --write --ignore-path=.gitignore \"src/**/*.{js,jsx}\""
+    "format": "prettier --write --ignore-path=.gitignore \"**/*.{js,jsx}\""
   },
   "repository": "https://github.com/ConnectOrlando/connectorlandoweb.git",
   "dependencies": {
