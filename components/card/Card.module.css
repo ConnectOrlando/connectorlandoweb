@@ -1,0 +1,68 @@
+.card-container {
+  background-color: blue;
+  width: 300px;
+  overflow: hidden;
+}
+
+.roundedImage {
+  border-radius: 500px;
+  width: 200px;
+  border-style: groove;
+}
+
+.header {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  padding-top: 13px;
+}
+
+.userSaves {
+  display: flex;
+}
+
+.stat {
+  padding: 14px;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: thin;
+  color: rgb(183, 179, 179);
+  padding-bottom: 13px;
+}
+
+.location {
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: thin;
+  color: rgb(183, 179, 179);
+  padding-bottom: 13px;
+
+}
+
+.number {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.label {
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.button {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border: 2px solid #fff;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
