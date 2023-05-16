@@ -9,6 +9,8 @@
  * - linked to from the robots.txt
  */
 import ComponentPreviewStyles from '@app/styles/componentPreview.module.css';
+import { useRouter } from 'next/router';
+
 /**
  * Don't forget to import your component here!
  * For example:
@@ -17,6 +19,8 @@ import ComponentPreviewStyles from '@app/styles/componentPreview.module.css';
 import Card from '@app/components/card';
 
 export default function ComponentPreview() {
+  checkForOrigin(useRouter());
+
   return (
     <>
       <h1 className={ComponentPreviewStyles.title}>Component Preview</h1>
@@ -27,10 +31,23 @@ export default function ComponentPreview() {
       <main className={ComponentPreviewStyles.container}>
         {/* ▼▼▼▼▼▼▼ Insert component in here ▼▼▼▼▼▼▼ */}
 
-        <Card></Card>
+        <Card />
 
         {/* ▲▲▲▲▲▲▲ Insert component in here ▲▲▲▲▲▲▲ */}
       </main>
     </>
   );
+}
+
+function checkForOrigin(router) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  if (
+    window.location?.origin?.includes('localhost') ||
+    window.location?.origin?.includes('ngrok')
+  ) {
+    return;
+  }
+  router.push('/');
 }
