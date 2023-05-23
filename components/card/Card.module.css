@@ -1,7 +1,8 @@
-.card-container {
-  background-color: blue;
+.cardContainer {
+  background-color: white;
   width: 300px;
   overflow: hidden;
+  text-align: center;
 }
 
 .roundedImage {
@@ -10,7 +11,7 @@
   border-style: groove;
 }
 
-.header {
+.name {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -59,10 +60,10 @@
   font-size: 12px;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  border: 2px solid #fff;
+  border: 2px solid #ce2222;
   border-radius: 0.25rem;
   background: transparent;
-  color: #fff;
+  color: red;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
