@@ -6,7 +6,7 @@
   border: .1em solid #0A4092;
   color: rgba(255, 255, 255, 0.738);
   border-radius: 100px;
-  background: #0A4092;
+  background: var(--primary-color);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }

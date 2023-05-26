@@ -16,7 +16,7 @@ import { useRouter } from 'next/router';
  * For example:
  *   import Card from '@app/components/card';
  */
-import Card from '@app/components/card';
+import Button from '@app/components/pieces/button';
 
 export default function ComponentPreview() {
   checkForOrigin(useRouter());
@@ -31,7 +31,7 @@ export default function ComponentPreview() {
       <main className={ComponentPreviewStyles.container}>
         {/* ▼▼▼▼▼▼▼ Insert component in here ▼▼▼▼▼▼▼ */}
 
-        <Card />
+        <Button text="Try this" />
 
         {/* ▲▲▲▲▲▲▲ Insert component in here ▲▲▲▲▲▲▲ */}
       </main>
