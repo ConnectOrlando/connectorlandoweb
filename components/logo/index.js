@@ -2,10 +2,8 @@ import LogoStyles from '@app/components/logo/logo.module.css';
 import Image from 'next/image';
 
 export default function Logo({ size }) {
-  if (size == null) {
-    throw new Error('Component requires size: "small," "medium," or "large" ');
-  }
   let width;
+
   switch (size) {
     case 'small': {
       width = 100;
