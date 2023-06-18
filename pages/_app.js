@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }) {
           colorScheme: 'light',
         }}
       >
-        <Segment basic className={classes.noMargin}>
+        <Segment basic className={classes.noMargin} id="global-nav">
           <Group position="apart" sx={{ height: '100%' }} px={120}>
             <Logo size="small" />
             <Menu pointing secondary className={classes.hiddenMobile}>
