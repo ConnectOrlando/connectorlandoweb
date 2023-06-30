@@ -25,14 +25,6 @@ const useStyles = createStyles(theme => ({
     paddingLeft: `calc(${theme.spacing.md} * 2) !important`,
     paddingRight: `calc(${theme.spacing.md} * 2) !important`,
   },
-
-  bold: {
-    fontWeight: 700,
-  },
-
-  noMargin: {
-    margin: `${0} !important`,
-  },
 }));
 
 export default function App({ Component, pageProps }) {
@@ -47,7 +39,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>ConnectOlrando</title>
+        <title>ConnectOrlando</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -61,7 +53,7 @@ export default function App({ Component, pageProps }) {
           colorScheme: 'light',
         }}
       >
-        <Segment basic className={classes.noMargin} id="global-nav">
+        <Segment basic className="noMargin" id="global-nav">
           <Group position="apart" sx={{ height: '100%' }} px={120}>
             <Logo size="small" />
             <Menu pointing secondary className={classes.hiddenMobile}>
@@ -107,7 +99,7 @@ export default function App({ Component, pageProps }) {
           scrollAreaComponent={ScrollArea.Autosize}
         >
           <Drawer.Header>
-            <Drawer.Title className={classes.bold}>
+            <Drawer.Title className="bold">
               <Header as="h2">Menu</Header>
             </Drawer.Title>
             <Drawer.CloseButton />

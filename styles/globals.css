@@ -1,0 +1,7 @@
+.bold {
+  fontWeight: 700;
+}
+
+.noMargin {
+  margin: 0 !important;
+}
