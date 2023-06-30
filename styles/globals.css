@@ -1,3 +1,7 @@
+:root {
+  --mainFont: system-ui;
+}
+
 .bold {
   fontWeight: 700;
 }
