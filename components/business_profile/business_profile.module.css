@@ -1,0 +1,22 @@
+.container {
+  width: 19rem;
+  height: fit-content;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.businessImage {
+  padding-top: 1rem;
+  object-fit: contain;
+}
+
+.businessName {
+  margin: 0.5rem;
+}
+
+.businessType {
+  pointer-events: none;
+  margin-bottom: 1rem;
+}
