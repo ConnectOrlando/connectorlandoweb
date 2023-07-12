@@ -1,0 +1,44 @@
+.segment {
+  padding-top: 50px !important;
+  padding-bottom: 150px !important;
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  margin-top: 100px !important;
+  margin-left: 250px !important;
+  margin-right: 250px !important;
+  background: rgba(180, 180, 180, 0.682) !important;
+}
+
+.buttonSpacing {
+  padding-top: 20px !important;
+}
+
+.continueButton {
+  margin-top: 20px !important;
+  height: 38px !important;
+  width: 578px !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.sideSpacing {
+  padding-left: 340px;
+}
+
+.singleSpacing {
+  padding-left: 5px;
+}
+
+.center {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.newUserButton {
+  color: white;
+  height: 20;
+}
+
+.makeBlack {
+  color: black;
+}
