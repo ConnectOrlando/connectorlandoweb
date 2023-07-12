@@ -1,12 +1,11 @@
 import RoundedImageStyles from '@app/components/pieces/roundedImage/roundedImage.module.css';
-import Image from 'next/image';
 
 export default function RoundedImage({ url, alt, size }) {
   if (url == null) {
     throw new Error('Component requires image');
   }
   return (
-    <Image
+    <img
       className={RoundedImageStyles.round}
       src={url}
       width={size ?? 200}

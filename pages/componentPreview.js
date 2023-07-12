@@ -10,13 +10,14 @@
  */
 import ComponentPreviewStyles from '@app/styles/componentPreview.module.css';
 import { useRouter } from 'next/router';
+import { hideHeader } from '@app/utilities/pageUtilities';
 
 /**
  * Don't forget to import your component here!
  * For example:
- *   import Card from '@app/components/card';
+ *   import Logo from '@app/components/logo';
  */
-import Card from '@app/components/card';
+import Logo from '@app/components/logo';
 
 export default function ComponentPreview() {
   checkForOrigin(useRouter());
@@ -31,10 +32,11 @@ export default function ComponentPreview() {
       <main className={ComponentPreviewStyles.container}>
         {/* ▼▼▼▼▼▼▼ Insert component in here ▼▼▼▼▼▼▼ */}
 
-        <Card />
+        <Logo />
 
         {/* ▲▲▲▲▲▲▲ Insert component in here ▲▲▲▲▲▲▲ */}
       </main>
+      {hideHeader()}
     </>
   );
 }

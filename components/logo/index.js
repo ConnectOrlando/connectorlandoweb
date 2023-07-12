@@ -1,5 +1,4 @@
 import LogoStyles from '@app/components/logo/logo.module.css';
-import Image from 'next/image';
 
 export default function Logo({ size }) {
   let width;
@@ -23,12 +22,11 @@ export default function Logo({ size }) {
   }
 
   return (
-    <Image
+    <img
       className={LogoStyles.logo}
-      src={'/images/samsunglogo.png'}
+      src="/images/samsunglogo.png"
       width={width}
-      height={0} /*set to auto in css file*/
-      alt={'Connect Orlando Logo'}
+      alt="Connect Orlando Logo"
     />
   );
 }
