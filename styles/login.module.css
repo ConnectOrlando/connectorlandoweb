@@ -1,44 +1,64 @@
 .segment {
-  padding-top: 50px !important;
-  padding-bottom: 150px !important;
-  padding-left: 100px !important;
-  padding-right: 100px !important;
-  margin-top: 100px !important;
-  margin-left: 250px !important;
-  margin-right: 250px !important;
-  background: rgba(180, 180, 180, 0.682) !important;
+  margin-top: 50px !important;
+    width: 600px !important;
+    padding: 40px 50px 48px 50px !important;
 }
 
-.buttonSpacing {
-  padding-top: 20px !important;
+.loginHeader {
+  font-family: var(--mainFont) !important;
 }
 
-.continueButton {
-  margin-top: 20px !important;
+.infoHeader {
+  font-family: var(--mainFont);
+}
+
+.placeholderText {
+  font-family: var(--mainFont) !important;
+}
+
+.loginButton {
+  font-family: var(--mainFont) !important;
   height: 38px !important;
-  width: 578px !important;
-  color: rgb(255, 255, 255) !important;
 }
 
-.sideSpacing {
-  padding-left: 340px;
+.rememberMeButton {
+  font-family: var(--mainFont);
 }
 
-.singleSpacing {
-  padding-left: 5px;
+.forgotPasswordBreadcrumb {
+  font-family: var(--mainFont);
+}
+
+.signUpNowBreadcrumb {
+  font-family: var(--mainFont);
 }
 
 .center {
   display: flex;
-  align-items: center !important;
-  justify-content: center !important;
+  flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+  
+  .toRight {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: stretch;
+  }
+  
+  .verticalSpacing {
+    margin-top: 20px !important;
 }
 
-.newUserButton {
-  color: white;
-  height: 20;
+.decreaseBottomMargin {
+  margin-bottom: 0px !important;
 }
 
-.makeBlack {
-  color: black;
+.capitalize {
+  text-transform: uppercase !important;
 }
