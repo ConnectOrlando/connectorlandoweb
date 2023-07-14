@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import { Segment, Input, Form, Header, Button } from 'semantic-ui-react';
-import classNames from 'classnames';
+import { Segment, Form, Header, Button } from 'semantic-ui-react';
+import cx from 'classnames';
 import forgotPasswordStyles from '@app/styles/forgotPassword.module.css';
+import LabeledInput from '@app/components/pieces/labeledInput';
 
 export default function forgotPassword() {
   return (
@@ -15,29 +16,22 @@ export default function forgotPassword() {
         />
       </Head>
       <main className={forgotPasswordStyles.center}>
-        <Segment className={forgotPasswordStyles.segment}>
+        <Segment basic className={forgotPasswordStyles.segment}>
           <Header className={forgotPasswordStyles.mainHeader} as="h1">
             Forgot Password
           </Header>
           <p className={forgotPasswordStyles.mainHeaderParagraph}>
-            Enter your email address associated with your ConnectOrlando account
+            Enter the email address associated with your ConnectOrlando account
             and we&apos;ll send you a password reset link.
           </p>
-          <label
-            className={classNames(
-              forgotPasswordStyles.inputHeader,
-              forgotPasswordStyles.capitalize,
-              forgotPasswordStyles.bold
-            )}
-          >
-            email
-          </label>
-          <Input fluid placeholder="name@example.com" />
+
+          <LabeledInput label="Email" placeholder="name@example.com" />
+
           <Form.Field className={forgotPasswordStyles.verticalSpacing}>
             <Button
               color="blue"
               fluid
-              className={classNames(
+              className={cx(
                 forgotPasswordStyles.resetPasswordButton,
                 forgotPasswordStyles.capitalize
               )}
