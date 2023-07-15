@@ -21,7 +21,7 @@ export default function login() {
         />
       </Head>
       <main className={loginStyles.center}>
-        <Segment className={loginStyles.segment}>
+        <Segment basic className={loginStyles.segment}>
           <Header className={loginStyles.loginHeader} as="h1">
             Log In
           </Header>
@@ -48,16 +48,18 @@ export default function login() {
               log in
             </Button>
           </Form.Field>
-          <Form.Field className={loginStyles.verticalSpacing}>
+          <Form.Field
+            className={cx(
+              loginStyles.verticalSpacing,
+              loginStyles.toOppositeSides
+            )}
+          >
             <Checkbox
               className={loginStyles.rememberMeButton}
               label="Remember me"
             ></Checkbox>
             <Breadcrumb.Section
-              className={cx(
-                loginStyles.forgotPasswordBreadcrumb,
-                loginStyles.toRight
-              )}
+              className={loginStyles.forgotPasswordBreadcrumb}
               a
               href="https://cdn.wallpapersafari.com/74/46/dr3t5f.jpg"
               link
