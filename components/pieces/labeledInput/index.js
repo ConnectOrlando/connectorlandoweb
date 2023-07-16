@@ -1,7 +1,7 @@
 import labeledInputStyles from '@app/components/pieces/labeledInput/labeledInput.module.css';
 
 export default function LabeledInput({ label, placeholder }) {
-  if (label == null) {
+  if (label == null || label === '') {
     throw new Error('Component requires label');
   }
   if (placeholder == null) {

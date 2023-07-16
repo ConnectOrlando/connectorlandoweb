@@ -8,7 +8,7 @@ export default function forgotPassword() {
   return (
     <>
       <Head>
-        <title>Find My Account - ConnectOrlando</title>
+        <title>Forgot Password - ConnectOrlando</title>
         <meta
           name="description"
           content="Get help accessing your ConnectOrlando account by
@@ -20,7 +20,7 @@ export default function forgotPassword() {
           <Header className={forgotPasswordStyles.mainHeader} as="h1">
             Forgot Password
           </Header>
-          <p className={forgotPasswordStyles.mainHeaderParagraph}>
+          <p className={forgotPasswordStyles.description}>
             Enter the email address associated with your ConnectOrlando account
             and we&apos;ll send you a password reset link.
           </p>
