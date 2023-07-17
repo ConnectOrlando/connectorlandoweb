@@ -21,8 +21,11 @@ export default function BusinessProfileCard({
   for (const word of words) {
     if (word.length > 7) {
       const extraChars = businessName.length - 7;
-      const sizeDecrease = extraChars * 7;
+      const sizeDecrease = extraChars * 2;
       titleFontSize -= sizeDecrease;
+    }
+    if (titleFontSize < 15) {
+      titleFontSize = 16;
     }
   }
   return (
@@ -36,7 +39,7 @@ export default function BusinessProfileCard({
         {businessName}
       </Header>
       <Label
-        color="pink"
+        color="blue"
         horizontal
         className={BusinessProfileStyles.businessType}
       >
