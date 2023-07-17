@@ -1,0 +1,33 @@
+.container {
+  width: 15rem !important;
+  height: fit-content !important;
+    background-color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    font-family: var(--mainFont) !important;
+    padding: 0rem !important;
+}
+
+.businessImage {
+  object-fit: cover;
+  border: 0.15rem solid rgb(0, 0, 0);
+  margin-top: 1rem;
+  width: 170px;
+  height: 170px;
+}
+
+.businessName {
+  color: rgba(0, 0, 0, 0.813) !important;
+  margin: 0.2rem !important;
+  overflow: hidden !important;
+  font-family: var(--mainFont) !important;
+  text-overflow: ellipsis !important;
+    max-width: 14rem !important;
+}
+
+.businessType {
+  margin-bottom: 1rem !important;
+  margin-right: 0 !important;
+  text-transform: capitalize !important;
+}
