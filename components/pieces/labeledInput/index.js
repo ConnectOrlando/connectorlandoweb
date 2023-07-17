@@ -4,9 +4,7 @@ export default function LabeledInput({ label, placeholder }) {
   if (label == null || label === '') {
     throw new Error('Component requires label');
   }
-  if (placeholder == null) {
-    throw new Error('Component requires placeholder');
-  }
+
   return (
     <div>
       <label className={labeledInputStyles.label}>{label}</label>
