@@ -26,6 +26,7 @@ export default function BusinessProfileCard({
     }
     if (titleFontSize < 15) {
       titleFontSize = 16;
+      break;
     }
   }
   return (
