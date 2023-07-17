@@ -64,10 +64,11 @@ export default function login() {
           <Form.Field className={loginStyles.verticalSpacing}>
             <Header
               className={cx(
+                loginStyles.questionHeader,
                 loginStyles.center,
                 loginStyles.decreaseBottomMargin
               )}
-              as="h4"
+              as="h5"
             >
               Don&apos;t have an account?
             </Header>

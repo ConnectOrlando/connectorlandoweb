@@ -5,7 +5,29 @@
 }
 @media only screen and (max-width: 620px) {
   .segment {
-    padding-left: 10px 10px !important;
+    padding: 10px !important;
+    }
+    }
+    
+    @media only screen and (max-width: 527px) {
+      .toOppositeSides {
+        flex-direction: column;
+        align-items: flex-start !important;
+      }
+    
+      .forgotPasswordBreadcrumb {
+        margin-top: 10px;
+      }
+    
+      .signUpNowBreadcrumb {
+        justify-content: flex-start !important;
+      }
+    
+      .questionHeader {
+        display: flex;
+        justify-content: flex-start !important;
+        display: flex;
+        justify-content: flex-start;
   }
 }
 
@@ -26,6 +48,9 @@
   font-family: var(--mainFont);
 }
 
+.questionHeader {
+  font-family: var(--mainFont) !important;
+}
 .signUpNowBreadcrumb {
   font-family: var(--mainFont);
 }
