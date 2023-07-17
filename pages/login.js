@@ -9,35 +9,29 @@ import {
   Breadcrumb,
 } from 'semantic-ui-react';
 import cx from 'classnames';
+import LabeledInput from '@app/components/pieces/labeledInput';
 
 export default function login() {
   return (
     <>
       <Head>
-        <title>Login - ConnectOrlando</title>
+        <title>Sign In - ConnectOrlando</title>
         <meta
-          name="desecription"
-          content="Login to your ConnectOrlando account"
+          name="description"
+          content="Sign in to your ConnectOrlando account"
         />
       </Head>
-      <main className={loginStyles.center}>
+      <main className={loginStyles.centerMain}>
         <Segment basic className={loginStyles.segment}>
           <Header className={loginStyles.loginHeader} as="h1">
             Log In
           </Header>
+
           <Form>
-            <Form.Field>
-              <label className={loginStyles.infoHeader}>Email</label>
-              <input
-                className={loginStyles.placeholderText}
-                placeholder="name@example.com"
-              />
-            </Form.Field>
-            <Form.Field>
-              <label className={loginStyles.infoHeader}>Password</label>
-              <input placeholder="****************"></input>
-            </Form.Field>
+            <LabeledInput label="Email" placeholder="name@example.com" />
+            <LabeledInput label="Password" placeholder="****************" />
           </Form>
+
           <Form.Field className={loginStyles.verticalSpacing}>
             <Button
               type="submit"

@@ -1,18 +1,15 @@
 .segment {
-  margin-top: 50px !important;
+  margin: 50px 50px 0px 50px !important;
     width: 600px !important;
-    padding: 40px 50px 48px 50px !important;
+  padding: 50px 75px !important;
+}
+@media only screen and (max-width: 620px) {
+  .segment {
+    padding-left: 10px 10px !important;
+  }
 }
 
 .loginHeader {
-  font-family: var(--mainFont) !important;
-}
-
-.infoHeader {
-  font-family: var(--mainFont);
-}
-
-.placeholderText {
   font-family: var(--mainFont) !important;
 }
 
@@ -33,20 +30,20 @@
   font-family: var(--mainFont);
 }
 
+.centerMain {
+  display: flex;
+  justify-content: center;
+}
 .center {
   display: flex;
-  flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+  justify-content: center;
     align-items: center;
-    align-content: stretch;
   }
 
     .toOppositeSides {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-      align-items: center;
+    align-items: center;
   }
 
   .verticalSpacing {
