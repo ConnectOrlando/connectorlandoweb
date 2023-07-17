@@ -10,6 +10,7 @@
   "rules": {
     //These three are kind of annoying so turned them off
     "unicorn/no-null": "off",
+    "@next/next/no-img-element": "off",
     "unicorn/prevent-abbreviations": "off",
     "unicorn/consistent-destructuring": "off",
     "unicorn/no-array-callback-reference": "off",
