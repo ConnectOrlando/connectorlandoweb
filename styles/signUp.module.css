@@ -1,0 +1,51 @@
+.segment {
+  margin: 0px 50px !important;
+  width: 680px !important;
+  padding: 50px 75px !important;
+}
+
+@media only screen and (max-width: 754px) {
+  .pageTitle {
+    justify-content: flex-start !important;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .segment {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .pageTitle {
+    margin-bottom: 15px !important;
+  }
+}
+
+.pageTitle {
+  font-family: var(--mainFont) !important;
+  font-size: 40px !important;
+  margin-bottom: 5px !important;
+}
+
+.pageDescription {
+  margin-top: 10px;
+  margin-bottom: 25px !important;
+  font-family: var(--mainFont);
+  font-size: normal !important;
+}
+
+.continueButton {
+  font-family: var(--mainFont) !important;
+  text-transform: uppercase !important;
+  height: 50px;
+  margin-top: 30px !important;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.verticalSpacing {
+  margin-top: 20px !important
+}
