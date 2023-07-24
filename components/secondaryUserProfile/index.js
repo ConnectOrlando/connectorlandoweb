@@ -2,8 +2,8 @@ import UserProfileStyles from '@app/components/secondaryUserProfile/secondaryUse
 import { Segment, Header, Image } from 'semantic-ui-react';
 import _ from 'lodash-es';
 
-export default function SecondaryUserProfile({ imageUrl, name, location }) {
-  if (!_.isString(imageUrl || _.isEmpty(imageUrl))) {
+export default function SecondaryUserProfile({ profileImage, name, location }) {
+  if (!_.isString(profileImage || _.isEmpty(profileImage))) {
     throw new TypeError('Component requires a profile picture');
   }
   if (!_.isString(name) || _.isEmpty(name)) {
@@ -12,7 +12,7 @@ export default function SecondaryUserProfile({ imageUrl, name, location }) {
   if (!_.isString(location) || _.isEmpty(location)) {
     throw new Error('Component requires a location');
   }
-  let titleFontSize = 12;
+  let titleFontSize = 11;
   let subtitleFontSize = 8;
   const words = name.split(' ');
   for (const word of words) {
@@ -33,7 +33,7 @@ export default function SecondaryUserProfile({ imageUrl, name, location }) {
         className={UserProfileStyles.userImage}
         alt="User profile picture"
         circular
-        src={imageUrl}
+        src={profileImage}
       />
       <div className={UserProfileStyles.right}>
         <Header
@@ -46,7 +46,7 @@ export default function SecondaryUserProfile({ imageUrl, name, location }) {
           className={UserProfileStyles.location}
           style={{ fontSize: `${subtitleFontSize}px` }}
         >
-          {location}{' '}
+          {location}
         </p>
       </div>
     </Segment>
