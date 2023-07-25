@@ -1,0 +1,23 @@
+.label {
+  font-family: var(--mainFont);
+  display: block;
+  margin: 0px 0px 4px 0px;
+  color: rgba(0, 0, 0, .87);
+  font-size: 13px;
+  font-weight: 700;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.placeholder {
+  font-family: var(--mainFont);
+  line-height: 17px;
+    padding: 9.5px 14px;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid rgba(34, 36, 38, .15);
+  color: rgba(0, 0, 0, .87);
+  border-radius: 4px;
+  width: 100%;
+}
