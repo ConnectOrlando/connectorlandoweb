@@ -6,9 +6,6 @@ export default function UserCard({ profileImage, name, location }) {
   if (!_.isString(name) || _.isEmpty(name)) {
     throw new Error('Component requires user name');
   }
-  if (!_.isObject(location) || _.isEmpty(location)) {
-    throw new Error('Component requires a location');
-  }
 
   let titleFontSize = 11;
   let subtitleFontSize = 8;
