@@ -1,7 +1,6 @@
 .container {
   background-color: rgba(226, 225, 225, 0.674) !important;
-  min-width: 9rem !important;
-    max-width: 11rem !important;
+  width: 10rem !important;
   display: flex !important;
   align-items: center !important;
   padding: 0% !important;

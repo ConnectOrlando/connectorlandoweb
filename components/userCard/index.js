@@ -1,17 +1,15 @@
-import UserProfileStyles from '@app/components/secondaryUserProfile/secondaryUserProfile.module.css';
+import UserProfileStyles from '@app/components/userCard/userCard.module.css';
 import { Segment, Header, Image } from 'semantic-ui-react';
 import _ from 'lodash-es';
 
-export default function SecondaryUserProfile({ profileImage, name, location }) {
-  if (!_.isString(profileImage || _.isEmpty(profileImage))) {
-    throw new TypeError('Component requires a profile picture');
-  }
+export default function UserCard({ profileImage, name, location }) {
   if (!_.isString(name) || _.isEmpty(name)) {
     throw new Error('Component requires user name');
   }
-  if (!_.isString(location) || _.isEmpty(location)) {
+  if (!_.isObject(location) || _.isEmpty(location)) {
     throw new Error('Component requires a location');
   }
+
   let titleFontSize = 11;
   let subtitleFontSize = 8;
   const words = name.split(' ');
@@ -27,13 +25,22 @@ export default function SecondaryUserProfile({ profileImage, name, location }) {
       break;
     }
   }
+  const blankProfilePicture = _.isEmpty(profileImage);
+
+  const shouldShowComma =
+    !_.isEmpty(location.city) && !_.isEmpty(location.state);
+
   return (
     <Segment className={UserProfileStyles.container}>
       <Image
         className={UserProfileStyles.userImage}
         alt="User profile picture"
         circular
-        src={profileImage}
+        src={
+          blankProfilePicture
+            ? '/images/emptyProfilePicture.jpeg'
+            : profileImage
+        }
       />
       <div className={UserProfileStyles.right}>
         <Header
@@ -46,7 +53,9 @@ export default function SecondaryUserProfile({ profileImage, name, location }) {
           className={UserProfileStyles.location}
           style={{ fontSize: `${subtitleFontSize}px` }}
         >
-          {location}
+          {location.city}
+          {shouldShowComma ? ', ' : ''}
+          {location.state}
         </p>
       </div>
     </Segment>
