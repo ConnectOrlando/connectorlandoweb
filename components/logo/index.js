@@ -24,7 +24,7 @@ export default function Logo({ size }) {
   return (
     <img
       className={LogoStyles.logo}
-      src="/images/samsunglogo.png"
+      src="/images/logo.png"
       width={width}
       alt="Connect Orlando Logo"
     />
