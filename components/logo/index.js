@@ -5,11 +5,11 @@ export default function Logo({ size }) {
 
   switch (size) {
     case 'small': {
-      width = 100;
+      width = 150;
       break;
     }
     case 'medium': {
-      width = 200;
+      width = 250;
       break;
     }
     case 'large': {
@@ -24,7 +24,7 @@ export default function Logo({ size }) {
   return (
     <img
       className={LogoStyles.logo}
-      src="/images/logo.png"
+      src="/images/logo3.png"
       width={width}
       alt="Connect Orlando Logo"
     />
