@@ -37,7 +37,7 @@ export default function login() {
                 type="submit"
                 fluid
                 color="blue"
-                className={cx(loginStyles.loginButton, loginStyles.capitalize)}
+                className={loginStyles.loginButton}
               >
                 log in
               </Button>
@@ -63,11 +63,7 @@ export default function login() {
             </Form.Field>
             <Form.Field className={loginStyles.verticalSpacing}>
               <Header
-                className={cx(
-                  loginStyles.questionHeader,
-                  loginStyles.center,
-                  loginStyles.decreaseBottomMargin
-                )}
+                className={cx(loginStyles.questionHeader, loginStyles.center)}
                 as="h5"
               >
                 Don&apos;t have an account?
@@ -81,7 +77,7 @@ export default function login() {
                 href="https://cdn.wallpapersafari.com/26/94/LNjd52.jpg"
                 link
               >
-                Sign up now.
+                Sign up now
               </Breadcrumb.Section>
             </Form.Field>
           </Form>

@@ -1,33 +1,33 @@
 .segment {
   margin: 50px 50px 0px 50px !important;
-    width: 600px !important;
+  width: 600px !important;
   padding: 50px 75px !important;
 }
 @media only screen and (max-width: 620px) {
   .segment {
     padding: 10px !important;
-    }
-    }
+  }
+}
 
-    @media only screen and (max-width: 527px) {
-      .toOppositeSides {
-        flex-direction: column;
-        align-items: flex-start !important;
-      }
+@media only screen and (max-width: 527px) {
+  .toOppositeSides {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
 
-      .forgotPasswordBreadcrumb {
-        margin-top: 10px;
-      }
+  .forgotPasswordBreadcrumb {
+    margin-top: 10px;
+  }
 
-      .signUpNowBreadcrumb {
-        justify-content: flex-start !important;
-      }
+  .signUpNowBreadcrumb {
+    justify-content: flex-start !important;
+  }
 
-      .questionHeader {
-        display: flex;
-        justify-content: flex-start !important;
-        display: flex;
-        justify-content: flex-start;
+  .questionHeader {
+    display: flex;
+    justify-content: flex-start !important;
+    display: flex;
+    justify-content: flex-start;
   }
 }
 
@@ -38,6 +38,7 @@
 .loginButton {
   font-family: var(--mainFont) !important;
   height: 38px !important;
+  text-transform: uppercase !important;
 }
 
 .rememberMeButton {
@@ -50,6 +51,7 @@
 
 .questionHeader {
   font-family: var(--mainFont) !important;
+  margin-bottom: 0px !important;
 }
 .signUpNowBreadcrumb {
   font-family: var(--mainFont);
@@ -62,23 +64,15 @@
 .center {
   display: flex;
   justify-content: center;
-    align-items: center;
-  }
-
-    .toOppositeSides {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .verticalSpacing {
-    margin-top: 20px !important;
+  align-items: center;
 }
 
-.decreaseBottomMargin {
-  margin-bottom: 0px !important;
+.toOppositeSides {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.capitalize {
-  text-transform: uppercase !important;
+.verticalSpacing {
+  margin-top: 20px !important;
 }
