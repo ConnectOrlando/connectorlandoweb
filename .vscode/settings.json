@@ -94,7 +94,7 @@
   "files.associations": {
     "*.hbs": "handlebars"
   },
-  "window.commandCenter": false,
+  "window.commandCenter": true,
   "terminal.integrated.cursorBlinking": true,
   "editor.fontLigatures": true,
   "editor.fontFamily": "FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",

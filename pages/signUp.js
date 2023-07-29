@@ -23,24 +23,34 @@ export default function signUp() {
             You will use this email and password to log into your ConnectOrlando
             account.
           </p>
+          <Form>
+            <Form.Field className={signupStyles.verticalSpacing}>
+              <LabeledInput label="Name" />
+            </Form.Field>
 
-          <LabeledInput label="Email" />
+            <Form.Field>
+              <LabeledInput label="Email" />
+            </Form.Field>
 
-          <Form.Field className={signupStyles.verticalSpacing}>
-            <LabeledInput label="Password" />
-          </Form.Field>
+            <Form.Field className={signupStyles.verticalSpacing}>
+              <LabeledInput label="Password" />
+            </Form.Field>
 
-          <Form.Field className={signupStyles.verticalSpacing}>
-            <LabeledInput label="Name" />
-          </Form.Field>
+            <Form.Field className={signupStyles.verticalSpacing}>
+              <LabeledInput label="Confirm Password" />
+            </Form.Field>
 
-          <Button
-            color="blue"
-            fluid
-            className={cx(signupStyles.continueButton, signupStyles.capitalize)}
-          >
-            Continue
-          </Button>
+            <Button
+              color="blue"
+              fluid
+              className={cx(
+                signupStyles.continueButton,
+                signupStyles.capitalize
+              )}
+            >
+              Create Account
+            </Button>
+          </Form>
         </Segment>
       </main>
     </>
