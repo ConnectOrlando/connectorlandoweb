@@ -26,64 +26,65 @@ export default function login() {
           <Header className={loginStyles.loginHeader} as="h1">
             Log In
           </Header>
-
           <Form>
-            <LabeledInput label="Email" placeholder="name@example.com" />
-            <LabeledInput label="Password" placeholder="****************" />
-          </Form>
+            <Form.Field>
+              <LabeledInput label="Email" placeholder="name@example.com" />
+              <LabeledInput label="Password" placeholder="****************" />
+            </Form.Field>
 
-          <Form.Field className={loginStyles.verticalSpacing}>
-            <Button
-              type="submit"
-              fluid
-              color="blue"
-              className={cx(loginStyles.loginButton, loginStyles.capitalize)}
-            >
-              log in
-            </Button>
-          </Form.Field>
-          <Form.Field
-            className={cx(
-              loginStyles.verticalSpacing,
-              loginStyles.toOppositeSides
-            )}
-          >
-            <Checkbox
-              className={loginStyles.rememberMeButton}
-              label="Remember me"
-            ></Checkbox>
-            <Breadcrumb.Section
-              className={loginStyles.forgotPasswordBreadcrumb}
-              a
-              href="https://cdn.wallpapersafari.com/74/46/dr3t5f.jpg"
-              link
-            >
-              Forgot Password?
-            </Breadcrumb.Section>
-          </Form.Field>
-          <Form.Field className={loginStyles.verticalSpacing}>
-            <Header
+            <Form.Field className={loginStyles.verticalSpacing}>
+              <Button
+                type="submit"
+                fluid
+                color="blue"
+                className={cx(loginStyles.loginButton, loginStyles.capitalize)}
+              >
+                log in
+              </Button>
+            </Form.Field>
+            <Form.Field
               className={cx(
-                loginStyles.questionHeader,
-                loginStyles.center,
-                loginStyles.decreaseBottomMargin
+                loginStyles.verticalSpacing,
+                loginStyles.toOppositeSides
               )}
-              as="h5"
             >
-              Don&apos;t have an account?
-            </Header>
-            <Breadcrumb.Section
-              className={cx(
-                loginStyles.center,
-                loginStyles.signUpNowBreadcrumb
-              )}
-              a
-              href="https://cdn.wallpapersafari.com/26/94/LNjd52.jpg"
-              link
-            >
-              Sign up now.
-            </Breadcrumb.Section>
-          </Form.Field>
+              <Checkbox
+                className={loginStyles.rememberMeButton}
+                label="Remember me"
+              ></Checkbox>
+              <Breadcrumb.Section
+                className={loginStyles.forgotPasswordBreadcrumb}
+                a
+                href="https://cdn.wallpapersafari.com/74/46/dr3t5f.jpg"
+                link
+              >
+                Forgot Password?
+              </Breadcrumb.Section>
+            </Form.Field>
+            <Form.Field className={loginStyles.verticalSpacing}>
+              <Header
+                className={cx(
+                  loginStyles.questionHeader,
+                  loginStyles.center,
+                  loginStyles.decreaseBottomMargin
+                )}
+                as="h5"
+              >
+                Don&apos;t have an account?
+              </Header>
+              <Breadcrumb.Section
+                className={cx(
+                  loginStyles.center,
+                  loginStyles.signUpNowBreadcrumb
+                )}
+                a
+                href="https://cdn.wallpapersafari.com/26/94/LNjd52.jpg"
+                link
+              >
+                Sign up now.
+              </Breadcrumb.Section>
+            </Form.Field>
+          </Form>
         </Segment>
       </main>
     </>
