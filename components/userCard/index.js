@@ -22,7 +22,6 @@ export default function UserCard({ profileImage, name, location }) {
       break;
     }
   }
-  const blankProfilePicture = _.isEmpty(profileImage);
 
   const shouldShowComma =
     !_.isEmpty(location.city) && !_.isEmpty(location.state);
@@ -34,7 +33,7 @@ export default function UserCard({ profileImage, name, location }) {
         alt="User profile picture"
         circular
         src={
-          blankProfilePicture
+          _.isEmpty(profileImage)
             ? '/images/emptyProfilePicture.jpeg'
             : profileImage
         }
