@@ -1,13 +1,6 @@
 import Head from 'next/head';
 import loginStyles from '@app/styles/login.module.css';
-import {
-  Header,
-  Segment,
-  Form,
-  Button,
-  Checkbox,
-  Breadcrumb,
-} from 'semantic-ui-react';
+import { Header, Segment, Form, Button, Checkbox } from 'semantic-ui-react';
 import cx from 'classnames';
 import LabeledInput from '@app/components/pieces/labeledInput';
 
@@ -52,14 +45,12 @@ export default function login() {
                 className={loginStyles.rememberMeButton}
                 label="Remember me"
               ></Checkbox>
-              <Breadcrumb.Section
-                className={loginStyles.forgotPasswordBreadcrumb}
-                a
+              <a
+                className={loginStyles.forgotPasswordAnchor}
                 href="https://cdn.wallpapersafari.com/74/46/dr3t5f.jpg"
-                link
               >
                 Forgot Password?
-              </Breadcrumb.Section>
+              </a>
             </Form.Field>
             <Form.Field className={loginStyles.verticalSpacing}>
               <Header
@@ -68,17 +59,12 @@ export default function login() {
               >
                 Don&apos;t have an account?
               </Header>
-              <Breadcrumb.Section
-                className={cx(
-                  loginStyles.center,
-                  loginStyles.signUpNowBreadcrumb
-                )}
-                a
+              <a
+                className={cx(loginStyles.center, loginStyles.signUpNowAnchor)}
                 href="https://cdn.wallpapersafari.com/26/94/LNjd52.jpg"
-                link
               >
                 Sign up now
-              </Breadcrumb.Section>
+              </a>
             </Form.Field>
           </Form>
         </Segment>

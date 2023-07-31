@@ -15,11 +15,11 @@
     align-items: flex-start !important;
   }
 
-  .forgotPasswordBreadcrumb {
+  .forgotPasswordAnchor {
     margin-top: 10px;
   }
 
-  .signUpNowBreadcrumb {
+  .signUpNowAnchor {
     justify-content: flex-start !important;
   }
 
@@ -45,7 +45,7 @@
   font-family: var(--mainFont);
 }
 
-.forgotPasswordBreadcrumb {
+.forgotPasswordAnchor {
   font-family: var(--mainFont);
 }
 
@@ -53,7 +53,7 @@
   font-family: var(--mainFont) !important;
   margin-bottom: 0px !important;
 }
-.signUpNowBreadcrumb {
+.signUpNowAnchor {
   font-family: var(--mainFont);
 }
 
