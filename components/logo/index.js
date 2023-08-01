@@ -1,6 +1,16 @@
 import LogoStyles from '@app/components/logo/logo.module.css';
+import { useColorScheme } from '@mantine/hooks';
 
 export default function Logo({ size }) {
+  const colorScheme = useColorScheme();
+  let logoUrl = '';
+
+  if (colorScheme === 'light') {
+    logoUrl = '/images/logo.png';
+  } else if (colorScheme === 'dark') {
+    logoUrl = '/images/logoDarkMode.png';
+  }
+
   let width;
 
   switch (size) {
@@ -9,7 +19,7 @@ export default function Logo({ size }) {
       break;
     }
     case 'medium': {
-      width = 250;
+      width = 200;
       break;
     }
     case 'large': {
@@ -24,7 +34,7 @@ export default function Logo({ size }) {
   return (
     <img
       className={LogoStyles.logo}
-      src="/images/logo.png"
+      src={logoUrl}
       width={width}
       alt="Connect Orlando Logo"
     />
