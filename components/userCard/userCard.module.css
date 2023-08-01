@@ -1,0 +1,37 @@
+.container {
+  background-color: rgba(226, 225, 225, 0.674) !important;
+  width: 10rem !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0% !important;
+  font-family: var(--mainFont) !important;
+  height: 3rem !important;
+    max-height: 5rem !important;
+}
+
+.userImage {
+  margin: 0.5rem !important;
+  margin-left: 0.6rem !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  object-fit: cover !important;
+}
+
+.right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border: 0.5rem;
+}
+
+.userName {
+  font-family: var(--mainFont) !important;
+  font-weight: bold !important;
+  margin: 0% !important;
+}
+
+.location {
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1;
+}
