@@ -4,7 +4,7 @@ import { Header, Segment, Form, Button, Checkbox } from 'semantic-ui-react';
 import cx from 'classnames';
 import LabeledInput from '@app/components/pieces/labeledInput';
 
-export default function login() {
+export default function Login() {
   return (
     <>
       <Head>
@@ -42,10 +42,7 @@ export default function login() {
               </Button>
             </Form.Field>
             <Form.Field
-              className={cx(
-                loginStyles.topSpacing,
-                loginStyles.toOppositeSides
-              )}
+              className={cx(loginStyles.topSpacing, loginStyles.spaceBetween)}
             >
               <Checkbox
                 className={loginStyles.rememberMeButton}

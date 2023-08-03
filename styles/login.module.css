@@ -3,6 +3,7 @@
   width: 600px !important;
   padding: 50px 75px !important;
 }
+
 @media only screen and (max-width: 620px) {
   .segment {
     padding: 10px !important;
@@ -14,7 +15,7 @@
     justify-content: flex-start !important;
   }
 
-  .toOppositeSides {
+  .spaceBetween {
     flex-direction: column;
     align-items: flex-start !important;
   }
@@ -69,7 +70,7 @@
   align-items: center;
 }
 
-.toOppositeSides {
+.spaceBetween {
   display: flex;
   justify-content: space-between;
   align-items: center;
