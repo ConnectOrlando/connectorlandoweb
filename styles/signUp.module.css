@@ -42,20 +42,21 @@
 }
 
 .loginHeader {
-  margin-top: 30px !important;
   margin-right: 5px !important;
   margin-bottom: 0px !important;
+  margin-top: 0px !important;
   font-family: var(--mainFont) !important;
 }
 
 .loginAnchor {
   font-family: var(--mainFont) !important;
+  margin-top: 0px;
 }
 
 .center {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .sameLine {

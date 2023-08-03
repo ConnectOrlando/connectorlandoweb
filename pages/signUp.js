@@ -52,7 +52,9 @@ export default function signUp() {
             >
               Create Account
             </Button>
-            <Form.Field className={signupStyles.center}>
+            <Form.Field
+              className={cx(signupStyles.center, signupStyles.verticalSpacing)}
+            >
               <Header className={signupStyles.loginHeader} as="h4">
                 Already have an account?
               </Header>
