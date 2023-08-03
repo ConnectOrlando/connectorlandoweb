@@ -14,18 +14,24 @@ export default function login() {
           content="Sign in to your ConnectOrlando account"
         />
       </Head>
-      <main className={loginStyles.centerMain}>
+      <main className={loginStyles.center}>
         <Segment basic className={loginStyles.segment}>
-          <Header className={loginStyles.loginHeader} as="h1">
+          <Header
+            className={cx(loginStyles.loginHeader, loginStyles.center)}
+            as="h1"
+          >
             Log In
           </Header>
           <Form>
             <Form.Field>
               <LabeledInput label="Email" placeholder="name@example.com" />
+            </Form.Field>
+
+            <Form.Field>
               <LabeledInput label="Password" placeholder="****************" />
             </Form.Field>
 
-            <Form.Field className={loginStyles.verticalSpacing}>
+            <Form.Field className={loginStyles.topSpacing}>
               <Button
                 type="submit"
                 fluid
@@ -37,7 +43,7 @@ export default function login() {
             </Form.Field>
             <Form.Field
               className={cx(
-                loginStyles.verticalSpacing,
+                loginStyles.topSpacing,
                 loginStyles.toOppositeSides
               )}
             >
@@ -52,7 +58,7 @@ export default function login() {
                 Forgot Password?
               </a>
             </Form.Field>
-            <Form.Field className={loginStyles.verticalSpacing}>
+            <Form.Field className={loginStyles.topSpacing}>
               <Header
                 className={cx(loginStyles.questionHeader, loginStyles.center)}
                 as="h5"
