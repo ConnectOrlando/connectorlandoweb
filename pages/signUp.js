@@ -26,7 +26,7 @@ export default function signUp() {
             account.
           </p>
           <Form>
-            <Form.Field className={signupStyles.verticalSpacing}>
+            <Form.Field className={signupStyles.topSpacing}>
               <LabeledInput label="Name" />
             </Form.Field>
 
@@ -34,11 +34,11 @@ export default function signUp() {
               <LabeledInput label="Email" />
             </Form.Field>
 
-            <Form.Field className={signupStyles.verticalSpacing}>
+            <Form.Field className={signupStyles.topSpacing}>
               <LabeledInput label="Password" />
             </Form.Field>
 
-            <Form.Field className={signupStyles.verticalSpacing}>
+            <Form.Field className={signupStyles.topSpacing}>
               <LabeledInput label="Confirm Password" />
             </Form.Field>
 
@@ -53,7 +53,7 @@ export default function signUp() {
               Create Account
             </Button>
             <Form.Field
-              className={cx(signupStyles.center, signupStyles.verticalSpacing)}
+              className={cx(signupStyles.center, signupStyles.topSpacing)}
             >
               <Header className={signupStyles.loginHeader} as="h4">
                 Already have an account?
