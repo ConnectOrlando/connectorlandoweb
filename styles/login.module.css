@@ -37,6 +37,8 @@
 
 .loginHeader {
   font-family: var(--mainFont) !important;
+  font-size: 40px !important;
+
 }
 
 .loginButton {
