@@ -41,9 +41,25 @@
   margin-top: 30px !important;
 }
 
+.loginHeader {
+  margin-top: 30px !important;
+  margin-right: 5px !important;
+  margin-bottom: 0px !important;
+  font-family: var(--mainFont) !important;
+}
+
+.loginAnchor {
+  font-family: var(--mainFont) !important;
+}
+
 .center {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+}
+
+.sameLine {
+  display: inline-block;
 }
 
 .verticalSpacing {
