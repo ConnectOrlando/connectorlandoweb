@@ -1,6 +1,7 @@
 .container {
   width: 15rem;
-  height: 18rem;
+  min-height: 10rem;
+    max-height: 18rem;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -8,21 +9,16 @@
   border-radius: 5% !important;
 }
 
-
-
 .userDescription {
-  height: 12rem;
+  max-height: 12rem;
   font-size: 10.5px;
   text-align: center;
-  white-space: pre-wrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 8;
-  /*Elipsis shows in line 8*/
-
 }
+
 
 .button {
   font-size: 10.5px !important;
