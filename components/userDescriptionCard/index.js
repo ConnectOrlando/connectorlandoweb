@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
 UserDescriptionCard.propTypes = {
   user: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    profileImage: PropTypes.string.isRequired,
+    profileImage: PropTypes.string,
     location: PropTypes.shape({
-      street: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      state: PropTypes.string.isRequired,
-      zip: PropTypes.string.isRequired,
-    }).isRequired,
-    description: PropTypes.string.isRequired,
-  }).isRequired,
+      street: PropTypes.string,
+      city: PropTypes.string,
+      state: PropTypes.string,
+      zip: PropTypes.string,
+    }),
+    description: PropTypes.string,
+  }),
 };
 
 export function UserDescriptionCard({ user }) {
