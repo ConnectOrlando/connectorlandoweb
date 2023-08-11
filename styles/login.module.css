@@ -1,0 +1,81 @@
+.segment {
+  margin: 50px 50px 0px 50px !important;
+  width: 600px !important;
+  padding: 50px 75px !important;
+}
+
+@media only screen and (max-width: 620px) {
+  .segment {
+    padding: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 527px) {
+  .loginHeader {
+    justify-content: flex-start !important;
+  }
+
+  .spaceBetween {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .forgotPasswordAnchor {
+    margin-top: 10px;
+  }
+
+  .signUpNowAnchor {
+    justify-content: flex-start !important;
+  }
+
+  .questionHeader {
+    display: flex;
+    justify-content: flex-start !important;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.loginHeader {
+  font-family: var(--mainFont) !important;
+  font-size: 40px !important;
+
+}
+
+.loginButton {
+  font-family: var(--mainFont) !important;
+  height: 38px !important;
+  text-transform: uppercase !important;
+}
+
+.rememberMeButton {
+  font-family: var(--mainFont);
+}
+
+.forgotPasswordAnchor {
+  font-family: var(--mainFont);
+}
+
+.questionHeader {
+  font-family: var(--mainFont) !important;
+  margin-bottom: 0px !important;
+}
+.signUpNowAnchor {
+  font-family: var(--mainFont);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topSpacing {
+  margin-top: 20px !important;
+}
