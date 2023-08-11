@@ -1,26 +1,24 @@
-import BusinessProfileStyles from '@app/components/business_profile/business_profile.module.css';
+import BusinessProfileStyles from '@app/components/businessProfileCard/business_profile.module.css';
 import { Label, Header, Segment } from 'semantic-ui-react';
 import _ from 'lodash-es';
+import PropTypes from 'prop-types';
 
-export default function BusinessProfileCard({
-  imageUrl,
-  businessName,
-  category,
-}) {
-  if (!_.isString(imageUrl || _.isEmpty(imageUrl))) {
-    throw new TypeError('Component requires business image');
-  }
-  if (!_.isString(businessName) || _.isEmpty(businessName)) {
+BusinessProfileCard.propTypes = {
+  imageUrl: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+};
+
+export default function BusinessProfileCard({ imageUrl, name, category }) {
+  if (_.isEmpty(name)) {
     throw new Error('Component requires business name');
   }
-  if (!_.isString(category) || _.isEmpty(category)) {
-    throw new Error('Component requires business category');
-  }
+
   let titleFontSize = 25;
-  const words = businessName.split(' ');
+  const words = name.split(' ');
   for (const word of words) {
     if (word.length > 7) {
-      const extraChars = businessName.length - 7;
+      const extraChars = name.length - 7;
       const sizeDecrease = extraChars * 2;
       titleFontSize -= sizeDecrease;
     }
@@ -31,13 +29,19 @@ export default function BusinessProfileCard({
   }
   return (
     <Segment className={BusinessProfileStyles.container}>
-      <img className={BusinessProfileStyles.businessImage} src={imageUrl} />
+      <img
+        className={BusinessProfileStyles.businessImage}
+        src={
+          _.isEmpty(imageUrl) ? '/images/emptyProfilePicture.jpeg' : imageUrl
+        }
+        alt="Business Profile Picture"
+      />
       <Header
         size="medium"
         style={{ fontSize: `${titleFontSize}px` }}
         className={BusinessProfileStyles.businessName}
       >
-        {businessName}
+        {name}
       </Header>
       <Label
         color="blue"
