@@ -1,5 +1,10 @@
 import LogoStyles from '@app/components/logo/logo.module.css';
 import { useColorScheme } from '@mantine/hooks';
+import PropTypes from 'prop-types';
+
+Logo.propTypes = {
+  size: PropTypes.string,
+};
 
 export default function Logo({ size }) {
   const colorScheme = useColorScheme();

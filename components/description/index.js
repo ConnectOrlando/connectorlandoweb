@@ -1,13 +1,18 @@
 import DescriptionStyles from '@app/components/description/description.module.css';
 import { Segment } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import _ from 'lodash-es';
+
+Description.propTypes = {
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
 
 export default function Description({ title, text }) {
-  if (title == null) {
+  if (_.isEmpty(title)) {
     throw new Error('Component requires title');
   }
-  if (text == null) {
-    throw new Error('Component requires text');
-  }
+
   let titleFontSize = 25;
   const words = title.split(' ');
   for (const word of words) {
@@ -18,7 +23,7 @@ export default function Description({ title, text }) {
     }
   }
   return (
-    <div className={DescriptionStyles.container}>
+    <Segment className={DescriptionStyles.container}>
       <div className={DescriptionStyles.left}>
         <h1
           className={DescriptionStyles.title}
@@ -32,6 +37,6 @@ export default function Description({ title, text }) {
           {text}
         </Segment>
       </div>
-    </div>
+    </Segment>
   );
 }
