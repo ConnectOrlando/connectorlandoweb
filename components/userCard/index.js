@@ -1,12 +1,15 @@
 import UserProfileStyles from '@app/components/userCard/userCard.module.css';
 import { Segment, Header, Image } from 'semantic-ui-react';
 import _ from 'lodash-es';
+import PropTypes from 'prop-types';
+
+UserCard.propTypes = {
+  profileImage: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  location: PropTypes.object,
+};
 
 export default function UserCard({ profileImage, name, location }) {
-  if (!_.isString(name) || _.isEmpty(name)) {
-    throw new Error('Component requires user name');
-  }
-
   let titleFontSize = 11;
   let subtitleFontSize = 8;
   const words = name.split(' ');
