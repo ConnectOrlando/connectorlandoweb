@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import signupStyles from '@app/styles/signUp.module.css';
+import signupStyles from '@app/styles/signup.module.css';
 import { Header, Segment, Form, Button } from 'semantic-ui-react';
 import cx from 'classnames';
 import LabeledInput from '@app/components/pieces/labeledInput';
 
-export default function signUp() {
+export default function signup() {
   return (
     <>
       <Head>
