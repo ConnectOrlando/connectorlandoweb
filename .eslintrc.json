@@ -30,6 +30,12 @@
     "prefer-template": "error",
     "prefer-const": "error",
     "require-atomic-updates": "error",
-    "no-return-await": "error"
+    "no-return-await": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }
