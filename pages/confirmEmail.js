@@ -7,14 +7,14 @@ export default function confirmEmail() {
   return (
     <>
       <Head>
-        <title>Confrim Email - ConnectOrlando</title>
+        <title>Confirm Email - ConnectOrlando</title>
         <meta name="description" content="Confirmed email page" />
       </Head>
       <main className={confirmEmailStyles.center}>
         <img
           src="https://slang.net/img/slang/lg/blue-checked_6094.png"
           alt="checkmark"
-          className={confirmEmailStyles.resizeSmaller}
+          className={confirmEmailStyles.checkmark}
         ></img>
         <h1>
           <strong>Email Verified!</strong>
