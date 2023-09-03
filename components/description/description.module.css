@@ -1,38 +1,42 @@
 .container {
-  background-color: white;
-  position: relative;
-  width: 555px;
-  height: 95px;
-  border: 2px solid;
-  overflow: auto;
-  display: flex;
-  align-items: flex-start;
+  background-color: white !important;
+  position: relative !important;
+  min-width: 20rem !important;
+  max-width: 26rem !important;
+  min-height: 3rem !important;
+  max-height: 6rem !important;
+  overflow: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  padding: 0.4rem !important;
 }
 
-.left {
-  flex-grow: 1;
+.header {
   background-color: white;
-  border: 3px solid white;
-  padding-left: 5px;
-  text-align: center;
-  max-width: 110px;
-    min-width: 110px;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-.right {
+.bottom {
   background-color: white;
-  left: 95px;
-  padding-left: 10px;
+  overflow-x: hidden !important;
 }
+
 
 .title {
-  font-weight: bolder;
-  font-family: var(--mainFont);
-  font-size: 25px;
+  font-weight: bolder !important;
+  font-family: var(--mainFont) !important;
+  font-size: 15px !important;
+  position: sticky !important;
+  text-transform: capitalize !important;
 }
 
 .text {
-  font-family: var(--mainFont);
-    font-size: 13px !important;
-  padding: 5px !important;
-}
+  font-family: var(--mainFont) !important;
+  font-size: 11px !important;
+  padding: 0% !important;
+  }
