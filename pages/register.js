@@ -18,24 +18,30 @@ import validator from 'validator';
 import Link from 'next/link';
 
 export default function Register() {
+  // Create all the state variables we need to track the form inputs
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
+  // This will track whether or not the password is visible
   const [showPassword, setShowPassword] = useState(false);
 
+  // Create all the variables needed to track the form validation
   const [showEmailError, setShowEmailError] = useState(false);
   const [showPasswordError, setShowPasswordError] = useState(false);
   const [showPasswordConfirmationError, setShowPasswordConfirmationError] =
     useState(false);
 
+  // This will track whether or not the submit button should be enabled
+  // It will be enabled if all the inputs are valid
   const isSubmitButtonEnabled =
     !_.isEmpty(name) &&
     isEmailValid() &&
     isPasswordValid() &&
     isPasswordConfirmationValid();
 
+  // This will track the state of the API call
   const { data, error, isLoading, trigger } = usePost({
     url: `${Urls.API}/auth/signup`,
     body: {
@@ -45,6 +51,10 @@ export default function Register() {
     },
   });
 
+  // useEffect will run the function passed in as the first argument
+  // every time the anything in the second argument changes
+  // in this case, we want to log the data and error every time they change
+  // in the future, we will want to do something with the data and error
   useEffect(() => {
     if (data) {
       console.log(data);
@@ -55,6 +65,8 @@ export default function Register() {
     }
   }, [data, error]);
 
+  // This validates the email, password, and password confirmation
+  // every time they change
   useEffect(() => {
     if (isEmailValid()) {
       setShowEmailError(false);
@@ -69,6 +81,7 @@ export default function Register() {
     }
   }, [email, password, passwordConfirmation]);
 
+  // these are just utility functions to validate the email, password, and password confirmation
   function validateEmail() {
     setShowEmailError(_.isEmpty(email) ? false : !isEmailValid());
   }
@@ -108,6 +121,10 @@ export default function Register() {
         <meta name="description" content="Create an account" />
       </Head>
       <main className={registerStyles.center}>
+        {/* Here is a condition -
+            if we have data from the API, that means the account was created successfully
+            so we show a success message
+        */}
         {data ? (
           <Segment basic className={registerStyles.successSegment}>
             <Header icon>
@@ -122,6 +139,7 @@ export default function Register() {
             </Link>
           </Segment>
         ) : (
+          //    Otherwise, we show the form here
           <Segment basic className={registerStyles.formSegment}>
             <Header
               className={cx(registerStyles.pageTitle, registerStyles.center)}
@@ -133,8 +151,13 @@ export default function Register() {
               You will use this email and password to log into your
               ConnectOrlando account.
             </p>
+            {/* If there is an error from the API, we set the form to error state to show any messages, etc. */}
             <Form error={error}>
               <Form.Field className={registerStyles.topSpacing}>
+                {/* Two important things here:
+                    - Note that the input is disabled whenever the API call is loading
+                    - also, note how we take the value from the input and set it to the name variable
+                */}
                 <LabeledInput
                   label="Name"
                   disabled={isLoading}
@@ -142,7 +165,13 @@ export default function Register() {
                 />
               </Form.Field>
 
+              {/* Here we set the field to error state if there is an error with the email */}
               <Form.Field error={showEmailError}>
+                {/* Here we use the LabeledInput component again, but this time we pass in a few more props:
+                    - onBlur - this is a function that will run when the user clicks out of the input
+                    - errorMessage - this is the message that will show if there is an error.
+                          However, we only want to show it if there is an error (see the ternary operator)
+                */}
                 <LabeledInput
                   label="Email"
                   errorMessage={
@@ -158,6 +187,15 @@ export default function Register() {
                 className={registerStyles.topSpacing}
                 error={showPasswordError}
               >
+                {/* Here we use the LabeledInput component again, but this time we pass in a few more props:
+                    - description - this is the description that will show under the input
+                    - icon - this is the icon that will show on the right side of the input (Semantic UI Icon).
+                             Notice that we use a ternary operator to determine which  icon to show -
+                            if the password is visible, we show the eye slash icon, otherwise we show the eye icon
+                    - onIconClick - this is the function that will run when the user clicks on the icon
+                    - type - this is the type of input. In our case, we want to show the password if the user clicks the icon,
+                            which sets the variable showPassword to true
+                */}
                 <LabeledInput
                   label="Password"
                   description="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
@@ -196,7 +234,7 @@ export default function Register() {
                   }}
                 />
               </Form.Field>
-
+              {/* Here we show the error message if there's an error from the API */}
               {error && !isLoading && (
                 <Message
                   error
@@ -204,7 +242,11 @@ export default function Register() {
                   content="Sorry, there's been an error creating your account. Please try again. If the issue persists, please contact our support team at support@connectorlando.tech"
                 />
               )}
-
+              {/* Here we show the submit button. Note that we:
+                    - disable the button if the form is loading or if the button is not enabled
+                    - show a loading indicator if the form is loading
+                    - onClick, we call the trigger function from the usePost hook to send the API call
+              */}
               <Button
                 color="blue"
                 fluid
