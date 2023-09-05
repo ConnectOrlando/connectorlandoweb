@@ -197,7 +197,7 @@ export default function Register() {
                 />
               </Form.Field>
 
-              {error && (
+              {error && !isLoading && (
                 <Message
                   error
                   header="Error creating account"
