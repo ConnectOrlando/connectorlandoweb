@@ -1,6 +1,13 @@
 import Head from 'next/head';
 import registerStyles from '@app/styles/register.module.css';
-import { Header, Segment, Form, Button } from 'semantic-ui-react';
+import {
+  Header,
+  Segment,
+  Form,
+  Button,
+  Message,
+  Icon,
+} from 'semantic-ui-react';
 import cx from 'classnames';
 import LabeledInput from '@app/components/pieces/labeledInput';
 import { useState, useEffect } from 'react';
@@ -8,6 +15,7 @@ import { usePost } from 'swirl-react';
 import { Urls } from '@app/constants/urls';
 import _ from 'lodash-es';
 import validator from 'validator';
+import Link from 'next/link';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -100,107 +108,132 @@ export default function Register() {
         <meta name="description" content="Create an account" />
       </Head>
       <main className={registerStyles.center}>
-        <Segment basic className={registerStyles.segment}>
-          <Form.Field>
+        {data ? (
+          <Segment basic className={registerStyles.successSegment}>
+            <Header icon>
+              <Icon name="check circle" color="blue" />
+              Succesfully created account!
+            </Header>
+            <p className={registerStyles.pageDescription}>
+              You can now log into your ConnectOrlando account
+            </p>
+            <Link href="/">
+              <Button primary>Home</Button>
+            </Link>
+          </Segment>
+        ) : (
+          <Segment basic className={registerStyles.formSegment}>
             <Header
               className={cx(registerStyles.pageTitle, registerStyles.center)}
               as="h1"
             >
               Create Your Account
             </Header>
-          </Form.Field>
-          <p className={registerStyles.pageDescription}>
-            You will use this email and password to log into your ConnectOrlando
-            account.
-          </p>
-          <Form>
-            <Form.Field className={registerStyles.topSpacing}>
-              <LabeledInput
-                label="Name"
-                disabled={isLoading}
-                onChange={event => setName(event?.target?.value?.trim())}
-              />
-            </Form.Field>
+            <p className={registerStyles.pageDescription}>
+              You will use this email and password to log into your
+              ConnectOrlando account.
+            </p>
+            <Form error={error}>
+              <Form.Field className={registerStyles.topSpacing}>
+                <LabeledInput
+                  label="Name"
+                  disabled={isLoading}
+                  onChange={event => setName(event?.target?.value?.trim())}
+                />
+              </Form.Field>
 
-            <Form.Field error={showEmailError}>
-              <LabeledInput
-                label="Email"
-                errorMessage={
-                  showEmailError ? 'Please enter a valid email' : ''
-                }
-                disabled={isLoading}
-                onBlur={validateEmail}
-                onChange={event => setEmail(event?.target?.value?.trim())}
-              />
-            </Form.Field>
+              <Form.Field error={showEmailError}>
+                <LabeledInput
+                  label="Email"
+                  errorMessage={
+                    showEmailError ? 'Please enter a valid email' : ''
+                  }
+                  disabled={isLoading}
+                  onBlur={validateEmail}
+                  onChange={event => setEmail(event?.target?.value?.trim())}
+                />
+              </Form.Field>
 
-            <Form.Field
-              className={registerStyles.topSpacing}
-              error={showPasswordError}
-            >
-              <LabeledInput
-                label="Password"
-                description="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
-                type={showPassword ? null : 'password'}
-                disabled={isLoading}
-                onBlur={validatePassword}
-                icon={showPassword ? 'eye slash' : 'eye'}
-                onIconClick={() => setShowPassword(!showPassword)}
-                errorMessage={
-                  showPasswordError ? 'Password does not meet requirements' : ''
-                }
-                onChange={event => setPassword(event?.target?.value?.trim())}
-              />
-            </Form.Field>
-
-            <Form.Field
-              className={registerStyles.topSpacing}
-              error={showPasswordConfirmationError}
-            >
-              <LabeledInput
-                label="Confirm Password"
-                disabled={isLoading}
-                type={showPassword ? null : 'password'}
-                onBlur={validatePasswordConfirmation}
-                icon={showPassword ? 'eye slash' : 'eye'}
-                onIconClick={() => setShowPassword(!showPassword)}
-                errorMessage={
-                  showPasswordConfirmationError ? 'Passwords do not match' : ''
-                }
-                onChange={event => {
-                  setPasswordConfirmation(event?.target?.value?.trim());
-                }}
-              />
-            </Form.Field>
-
-            <Button
-              color="blue"
-              fluid
-              className={cx(
-                registerStyles.continueButton,
-                registerStyles.capitalize
-              )}
-              disabled={!isSubmitButtonEnabled || isLoading}
-              onClick={trigger}
-              loading={isLoading}
-            >
-              Create Account
-            </Button>
-            <Form.Field
-              className={cx(registerStyles.center, registerStyles.topSpacing)}
-            >
-              <Header className={registerStyles.loginHeader} as="h4">
-                Already have an account?
-              </Header>
-              <a
-                className={registerStyles.loginAnchor}
-                href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FO6gkm-nklyw%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=72841007a96142d220bce3d50ec909c3e775a987ac2fd906048991a56ad59afa&ipo=images"
+              <Form.Field
+                className={registerStyles.topSpacing}
+                error={showPasswordError}
               >
-                Log in
-              </a>
-            </Form.Field>
-          </Form>
-        </Segment>
+                <LabeledInput
+                  label="Password"
+                  description="Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+                  type={showPassword ? null : 'password'}
+                  disabled={isLoading}
+                  onBlur={validatePassword}
+                  icon={showPassword ? 'eye slash' : 'eye'}
+                  onIconClick={() => setShowPassword(!showPassword)}
+                  errorMessage={
+                    showPasswordError
+                      ? 'Password does not meet requirements'
+                      : ''
+                  }
+                  onChange={event => setPassword(event?.target?.value?.trim())}
+                />
+              </Form.Field>
+
+              <Form.Field
+                className={registerStyles.topSpacing}
+                error={showPasswordConfirmationError}
+              >
+                <LabeledInput
+                  label="Confirm Password"
+                  disabled={isLoading}
+                  type={showPassword ? null : 'password'}
+                  onBlur={validatePasswordConfirmation}
+                  icon={showPassword ? 'eye slash' : 'eye'}
+                  onIconClick={() => setShowPassword(!showPassword)}
+                  errorMessage={
+                    showPasswordConfirmationError
+                      ? 'Passwords do not match'
+                      : ''
+                  }
+                  onChange={event => {
+                    setPasswordConfirmation(event?.target?.value?.trim());
+                  }}
+                />
+              </Form.Field>
+
+              {error && (
+                <Message
+                  error
+                  header="Error creating account"
+                  content="Sorry, there's been an error creating your account. Please try again. If the issue persists, please contact our support team at support@connectorlando.tech"
+                />
+              )}
+
+              <Button
+                color="blue"
+                fluid
+                className={cx(
+                  registerStyles.continueButton,
+                  registerStyles.capitalize
+                )}
+                disabled={!isSubmitButtonEnabled || isLoading}
+                onClick={trigger}
+                loading={isLoading}
+              >
+                Create Account
+              </Button>
+              <Form.Field
+                className={cx(registerStyles.center, registerStyles.topSpacing)}
+              >
+                <Header className={registerStyles.loginHeader} as="h4">
+                  Already have an account?
+                </Header>
+                <a
+                  className={registerStyles.loginAnchor}
+                  href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FO6gkm-nklyw%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=72841007a96142d220bce3d50ec909c3e775a987ac2fd906048991a56ad59afa&ipo=images"
+                >
+                  Log in
+                </a>
+              </Form.Field>
+            </Form>
+          </Segment>
+        )}
       </main>
     </>
   );
