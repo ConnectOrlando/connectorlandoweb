@@ -10,14 +10,18 @@
   text-overflow: ellipsis;
 }
 
-.placeholder {
+.label + .description {
+  margin-top: -4px;
+}
+
+.description {
   font-family: var(--mainFont);
-  line-height: 17px;
-    padding: 9.5px 14px;
-  font-size: 1em;
-  background: #fff;
-  border: 1px solid rgba(34, 36, 38, .15);
-  color: rgba(0, 0, 0, .87);
-  border-radius: 4px;
-  width: 100%;
+  display: block;
+  margin: 0px 0px 4px 0px;
+  color: rgba(61, 61, 61, 0.87);
+  font-size: 11px;
+  font-weight: 400;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
