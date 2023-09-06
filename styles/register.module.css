@@ -1,4 +1,10 @@
-.segment {
+.successSegment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formSegment {
   margin: 0px 50px !important;
   width: 680px !important;
   padding: 50px 75px !important;
@@ -11,7 +17,7 @@
 }
 
 @media only screen and (max-width: 620px) {
-  .segment {
+  .formSegment {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
