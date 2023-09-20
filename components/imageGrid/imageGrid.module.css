@@ -1,3 +1,15 @@
-.fullWidth {
-  width: 100% !important;
+.grid {
+  display: flex;
+  /* margin-left: -30px; */
+  width: auto;
+}
+.column {
+  padding-left: 10px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.column > img {
+  margin-bottom: 10px;
+  width: 100%;
 }
