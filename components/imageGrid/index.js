@@ -2,10 +2,17 @@ import * as React from 'react';
 import Masonry from 'react-masonry-css';
 import imageGridStyles from '@app/components/imageGrid/imageGrid.module.css';
 import PropTypes from 'prop-types';
+import { createStyles } from '@mantine/core';
+import cx from 'classnames';
 
 ImageGrid.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.string).isRequired,
   numberOfColumns: PropTypes.number,
+  spacing: PropTypes.number,
+};
+
+ImageGrid.defaultProps = {
+  spacing: 10,
 };
 
 const defaultBreakpointColumns = {
@@ -15,10 +22,13 @@ const defaultBreakpointColumns = {
   500: 1,
 };
 
-export default function ImageGrid({ photos, numberOfColumns }) {
-  if (photos == null) {
-    throw new Error('Image grid component requires photos array');
-  }
+export default function ImageGrid({ photos, numberOfColumns, spacing }) {
+  const useStyles = createStyles(() => ({
+    columnSpacing: {
+      paddingLeft: `${spacing}px`,
+    },
+  }));
+  const { classes } = useStyles();
 
   const breakpointColumns = numberOfColumns
     ? { default: numberOfColumns }
@@ -28,10 +38,15 @@ export default function ImageGrid({ photos, numberOfColumns }) {
     <Masonry
       className={imageGridStyles.grid}
       breakpointCols={breakpointColumns}
-      columnClassName={imageGridStyles.column}
+      columnClassName={cx(imageGridStyles.column, classes.columnSpacing)}
     >
       {photos.map((photo, index) => (
-        <img src={photo} key={index} alt=""></img>
+        <img
+          src={photo}
+          key={index}
+          alt=""
+          style={{ marginBottom: `${spacing}px` }}
+        ></img>
       ))}
     </Masonry>
   );
