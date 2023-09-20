@@ -11,6 +11,8 @@
 import ComponentPreviewStyles from '@app/styles/componentPreview.module.css';
 import { useRouter } from 'next/router';
 import { hideHeader } from '@app/utilities/pageUtilities';
+import { useMantineColorScheme } from '@mantine/core';
+import { Button } from 'semantic-ui-react';
 
 /**
  * Don't forget to import your component here!
@@ -21,10 +23,19 @@ import Logo from '@app/components/logo';
 
 export default function ComponentPreview() {
   checkForOrigin(useRouter());
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 
   return (
     <>
       <h1 className={ComponentPreviewStyles.title}>Component Preview</h1>
+      <Button
+        inverted={colorScheme === 'dark'}
+        color={colorScheme === 'dark' ? 'yellow' : 'blue'}
+        onClick={() => toggleColorScheme()}
+        icon={colorScheme === 'dark' ? 'sun' : 'moon'}
+        content={colorScheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        className={ComponentPreviewStyles.themeToggle}
+      />
       <p className={ComponentPreviewStyles.subtitle}>
         This shows you how your component will look when used in a vacuum. There
         is no outside CSS or HTML to affect it.
