@@ -1,0 +1,25 @@
+### Trello Link
+[Ticket](URL_HERE)
+
+<!-- Delete any sections that you don't need -->
+
+# Description
+Creating new component: `YOUR_COMPONENT_NAME`
+Creating new page url: `path/to/page`
+
+## Props
+| Name       | Type   | Required? | Description             | Default Value  |
+| ---------- | ------ | --------- | ----------------------- | -------------- |
+| `propName` | `type` | ✅         | description of the prop | `defaultValue` |
+
+
+### Screenshots
+| Description         | Image     |
+| ------------------- | --------- |
+| Default full screen | IMAGE_URL |
+
+
+### Sample Usage
+```jsx
+INSERT_SAMPLE_USAGE_HERE
+```
