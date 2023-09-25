@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Masonry from 'react-masonry-css';
 import imageGridStyles from '@app/components/imageGrid/imageGrid.module.css';
 import PropTypes from 'prop-types';
