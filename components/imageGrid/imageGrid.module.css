@@ -1,0 +1,13 @@
+.grid {
+  display: flex;
+  width: auto;
+}
+
+.column {
+  background-clip: padding-box;
+}
+
+.column > img {
+  margin-bottom: 20px;
+  width: 100%;
+}
