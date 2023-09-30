@@ -1,13 +1,13 @@
 import LogoStyles from '@app/components/logo/logo.module.css';
-import { useColorScheme } from '@mantine/hooks';
 import PropTypes from 'prop-types';
+import { useMantineColorScheme } from '@mantine/core';
 
 Logo.propTypes = {
   size: PropTypes.string,
 };
 
 export default function Logo({ size }) {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useMantineColorScheme();
   let logoUrl = '';
 
   if (colorScheme === 'light') {
