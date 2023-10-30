@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Segment, Form, Header, Button } from 'semantic-ui-react';
+import { Segment, Form, Header, Button, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import forgotPasswordStyles from '@app/styles/forgotPassword.module.css';
 import LabeledInput from '@app/components/pieces/labeledInput';
@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { usePost } from 'swirl-react';
 import _ from 'lodash';
 import validator from 'validator';
+import { Urls } from '@app/constants/urls';
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ export default function ForgotPassword() {
   const [showEmailError, setShowEmailError] = useState(false);
 
   const { isLoading, data, error, trigger } = usePost({
-    url: 'api.connectorlando.tech/auth/forgot-password',
+    url: `${Urls.API}/auth/forgot-password`,
     body: {
       email: email,
     },
@@ -37,22 +38,22 @@ export default function ForgotPassword() {
   }, [data, error]);
 
   //Check if submit button should be enabled
-  const isButtonEnabled = !_.isEmpty(email) && isEmailValid();
+  const isButtonEnabled = isEmailValid();
+
+  function isEmailValid() {
+    return !_.isEmpty(email) && validator.isEmail(email);
+  }
 
   //Validate email everytime it changes
   useEffect(() => {
     if (isEmailValid()) {
       setShowEmailError(false);
     }
-  });
+  }, [email]);
 
   //Utility function to validate email
   function validateEmail() {
     setShowEmailError(_.isEmpty(email) ? false : !isEmailValid());
-  }
-
-  function isEmailValid() {
-    return !_.isEmpty(email) && validator.isEmail(email);
   }
 
   return (
@@ -107,6 +108,14 @@ export default function ForgotPassword() {
                     - show a loading indicator if the form is loading
                     - onClick, we call the trigger function from the usePost hook to send the API call
               */}
+                {/* Error Message */}
+                {error && !isLoading && (
+                  <Message
+                    error
+                    header="Error resetting password"
+                    content="Please try again. If the issue persists, please contact our support team at support@connectorlando.tech"
+                  />
+                )}
                 <Button
                   color="blue"
                   fluid
